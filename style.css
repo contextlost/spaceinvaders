@@ -1,0 +1,67 @@
+:root{ --ui: 'Silkscreen', 'Courier New', Courier, monospace; }
+
+b,strong{ font-weight:400 }
+*{ font-synthesis:none }
+
+html,body{
+  margin:0; height:100%; overflow:hidden;
+  background:#020a14; color:#e8f1ff;
+  font-family:var(--ui); font-size:18px; font-weight:400; letter-spacing:.5px;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility;
+}
+
+.wrap{position:relative;height:100%;display:grid;place-items:center}
+canvas{width:min(100vw,calc(100vh*4/3));height:auto;aspect-ratio:4/3;display:block;outline:none;image-rendering:pixelated;background:transparent;border:0}
+
+.hud{position:absolute;top:12px;left:50%;transform:translateX(-50%);display:flex;gap:min(8vw,140px);align-items:flex-start;font-size:22px}
+.hudItem{display:flex;flex-direction:column;align-items:center;min-width:160px;text-align:center;line-height:1.05}
+.hudItem .label{font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.hudItem .value{font-size:22px;letter-spacing:.5px;font-variant-numeric:tabular-nums}
+
+.overlay{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(600px 300px at 50% 30%,rgba(0,0,0,.25),rgba(0,0,0,.65));text-align:center}
+.card{padding:18px 22px;border-radius:12px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.08);max-width:700px}
+.card p, .card h1, .card button {margin: 0;}
+.card h1 { margin: 0 0 32px 0; letter-spacing:1.5px; font-size:38px; text-transform:uppercase; line-height:1.15; }
+.card p { margin: 0 0 12px 0; letter-spacing:.5px; line-height:1.6; }
+.card p:last-of-type { margin-bottom: 0; }
+.card p.control-line { margin-bottom: 24px; }
+
+.card.transmission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  max-width: 500px;
+}
+.card.transmission h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.card.transmission p {
+  margin-bottom: 18px;
+}
+.card.transmission button {
+    background: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--ui);
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.card.transmission button:hover {
+    background: #357ae8;
+}
+.card.transmission #alien-icon {
+    margin-bottom: 15px;
+}
+
+.card.levelclear h1 { margin-bottom: 28px; }
+
+.kbd{padding:1px 6px;border-radius:6px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06)}
+.hidden{display:none}
+
+.toast{position:absolute;top:64px;left:50%;transform:translateX(-50%);font-size:18px;color:#e8f1ff;opacity:0;pointer-events:none;transition:opacity .15s ease;white-space:nowrap;text-shadow:0 2px 6px rgba(0,0,0,.4)}
